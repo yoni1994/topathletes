@@ -5,7 +5,7 @@ class Team(models.Model):
     def __init__(self, city, name, sport, primaryColor, secondaryColor):
         city = models.CharField(max_length=25)
         name = models.CharField(max_length=20)
-        sport = models.CharField(max_length=10)
+        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
         primaryColor = models.CharField(max_length=20)
         secondaryColor = models.CharField(max_length=20)
     
@@ -19,7 +19,7 @@ class Team(models.Model):
 class Player(models.Model):
     def __init__(self, name, sport, position, height, team):
         name = models.CharField(max_length=50)
-        sport = models.CharField(max_length=10)
+        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
         position = models.CharField(max_length=25)
         height = models.CharField(max_length=10)
         team = models.CharField(max_length=50)
@@ -31,3 +31,14 @@ class Player(models.Model):
 #     Player('Jonathan Toews', 'hockey', 'center', '6\'2', 'Chicago Blackhawks'),
 # ]
 
+class Sport(models.Model):
+    def __init__(self, name, teams, positions):
+        name = models.CharField(max_length=10)
+        teams = [models.ForeignKey('Team', on_delete=models.CASCADE)]
+        positions = [models.ForeignKey('Position', on_delete=models.CASCADE)]
+
+
+class Position(models.Model):
+    def __init__(self, name, sport):
+        name = models.CharField(max_length=10)
+        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
