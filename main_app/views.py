@@ -12,7 +12,7 @@ def basketball(request):
     return render(request, 'basketball.html')
 
 def football(request):
-    return HttpResponse('<h1>Welcome to Top Athletes Football Page')
+    return render(request, 'football.html')
 
 def hockey(request):
     return HttpResponse('<h1>Welcome to Top Athletes Hockey Page')
