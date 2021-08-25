@@ -6,7 +6,7 @@ def home(request):
     return HttpResponse('<h1>Welcome to Top Athletes Home Page')
 
 def baseball(request):
-    return HttpResponse('<h1>Welcome to Top Athletes Baseball Page')
+    return render(request, 'baseball.html')
 
 def basketball(request):
     return HttpResponse('<h1>Welcome to Top Athletes Basketball Page')
