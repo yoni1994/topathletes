@@ -15,5 +15,5 @@ def football(request):
     return render(request, 'football.html')
 
 def hockey(request):
-    return HttpResponse('<h1>Welcome to Top Athletes Hockey Page')
+    return render(request, 'hockey.html')
 
