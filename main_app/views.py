@@ -9,7 +9,7 @@ def baseball(request):
     return render(request, 'baseball.html')
 
 def basketball(request):
-    return HttpResponse('<h1>Welcome to Top Athletes Basketball Page')
+    return render(request, 'basketball.html')
 
 def football(request):
     return HttpResponse('<h1>Welcome to Top Athletes Football Page')
