@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href=""
+  >
+  <title>Top Athletes</title>
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <div class="header-logo-container">
+      <a href="/">
+        <img 
+          src="" 
+          alt="The Top Atheletes Logo"
+        >
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/baseball">Baseball</a></li>
+        <li><a href="/basketball"></a>Basketball</li>
+        <li><a href="/football"></a>Football</li>
+        <li><a href="/hockey"></a>Hockey</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
