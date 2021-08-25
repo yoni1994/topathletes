@@ -51,8 +51,8 @@ def football(request):
 def hockey(request):
     return render(request, 'hockey.html')
 
-def teams_index(request):
+def teams(request):
     return render(request, 'teams.html', { 'teams': teams })
 
-def players_index(request):
+def players(request):
     return render(request, 'players.html', { 'players': players })
