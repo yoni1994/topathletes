@@ -52,7 +52,7 @@ def hockey(request):
     return render(request, 'hockey.html')
 
 def teams_index(request):
-    return render(request, 'teams/index.html', { 'teams': teams })
+    return render(request, 'teams.html', { 'teams': teams })
 
 def players_index(request):
-    return render(request, 'players/index.html', { 'players': players })
+    return render(request, 'players.html', { 'players': players })
