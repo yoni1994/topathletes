@@ -20,6 +20,20 @@ teams = [
     Team('Chicago', 'Blackhawks', 'hockey', 'red', 'black'),
 ]
 
+class Player:
+    def __init__(self, name, sport, position, height, team):
+        self.name = name
+        self.sport = sport
+        self.position = position
+        self.height = height
+        self.team = team
+    
+players = [
+    Player('Ernie Banks', 'baseball', 'shortstop', '6\'1', 'Chicago Cubs'),
+    Player('Derrick Rose', 'basketball', 'point guard', '6\'3', 'Chicago Bulls'),
+    Player('Devin Hester', 'football', 'wide receiver', '5\'11', 'Chicago Bears'),
+    Player('Jonathan Toews', 'hockey', 'center', '6\'2', 'Chicago Blackhawks'),
+]
 
 
 def home(request):
