@@ -37,7 +37,7 @@ players = [
 
 
 def home(request):
-    return HttpResponse('<h1>Welcome to Top Athletes Home Page')
+    return render(request, 'home.html')
 
 def baseball(request):
     return render(request, 'baseball.html')
