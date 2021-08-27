@@ -19,13 +19,15 @@
 <section class="card-container">
   {% for player in players %}
     <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">{{ player.name }}</h2>
-        <h3>A {{ player.sport }} player</h3>
-        <h4>Position: {{ player.position }}</h4>
-        <h4>Height: {{ player.height }}</h4>
-        <h4>Team: {{ player.team }}</h4>
-      </div>
+      <a href="/players/{{ player.id }}">
+        <div class="card-content">
+          <h1 class="card-title">{{ player.name }}</h1>
+          {% comment %} <h3>A {{ player.sport }} player</h3> {% endcomment %}
+          {% comment %} <h4>Position: {{ player.position }}</h4>
+          <h4>Height: {{ player.height }}</h4>
+          <h4>Team: {{ player.team }}</h4> {% endcomment %}
+        </div>
+      </a>
     </div>
   {% endfor %}
 </section>

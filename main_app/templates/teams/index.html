@@ -20,11 +20,13 @@
 <section class="card-container">
   {% for team in teams %}
     <div class="card">
-      <div class="card-content">
-        <h2 class="card-title">{{ team.city }} {{ team.name }}</h2>
-        <h3>A {{ team.sport }} team</h3>
-        <h4>Colors: {{ team.primaryColor }} and {{ team.secondaryColor }}</h4>
-      </div>
+      <a href="/teams/{{ team.id }}">
+        <div class="card-content">
+          <h2 class="card-title">{{ team.city }} {{ team.name }}</h2>
+          {% comment %} <h3>A {{ team.sport }} team</h3>
+          <h4>Colors: {{ team.primaryColor }} and {{ team.secondaryColor }}</h4> {% endcomment %}
+        </div>
+      </a>
     </div>
   {% endfor %}
 </section>
