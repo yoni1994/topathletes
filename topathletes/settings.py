@@ -1,3 +1,7 @@
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
 """
 Django settings for topathletes project.
 
@@ -20,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t#)^2(c58^wu7cn+v))_r5w-sg0%gb%mrso)+^j*zxdz)(i4g&'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -124,3 +128,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
