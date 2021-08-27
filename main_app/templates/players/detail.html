@@ -11,7 +11,10 @@
 
 <h1>{{ player.name }} is a {{ player.height }} {{player.position}} for the {{ player.team }}</h1>
 
-
+<div class="player-actions">
+      <a href="{% url 'players_update' player.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'players_delete' player.id %}" class="btn danger">Delete</a>
+</div>
 
 
 {% endblock %}

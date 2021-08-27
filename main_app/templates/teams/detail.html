@@ -13,6 +13,10 @@
 
 <h1>Their primary colors are <span style='color: {{team.primaryColor}}; background-color: {{team.secondaryColor}}'>{{team.primaryColor}}</span> and <span style='color: {{team.secondaryColor}}; background-color: {{team.primaryColor}}'>{{team.secondaryColor}}</span></h1>
 
+<div class="team-actions">
+      <a href="{% url 'teams_update' team.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'teams_delete' team.id %}" class="btn danger">Delete</a>
+</div>
 
 
 {% endblock %}
