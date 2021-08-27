@@ -16,15 +16,30 @@
     <title>Top Athletes</title>
 </head>
 <body>
-    <h1>Add a Team</h1>
+    {% if object %}
+      <h1>Edit {{object.name}}</h1>
+    {% else %}
+      <h1>Add a Player</h1>
+    {% endif %}
+
     <hr>
 
     <form action="" method="post" class="pure-form">
+
     {% csrf_token %}
+
     <table>
       {{ form.as_table }}
     </table>
-    <button type="submit" class="btn submit">Add this team!</button>
+
+    {% if object %}
+    <button type="submit" class="btn submit">Edit Team</button>
+    {% else %}
+    <button type="submit" class="btn submit">Add Team</button>
+    {% endif %}
+    
+    </form>
+
     </form>
 
 </body>
