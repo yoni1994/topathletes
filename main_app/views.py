@@ -63,3 +63,9 @@ def players_index(request):
 class TeamCreate(CreateView):
   model = Team
   fields = '__all__'
+  success_url = '/'
+
+class PlayerCreate(CreateView):
+    model = Player
+    fields = '__all__'
+    success_url = '/'

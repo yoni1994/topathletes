@@ -11,6 +11,10 @@
   <h1>Player List</h1>
 </section>
 
+{% if players|length == 0 %}
+    <h2>No players yet!</h2>
+
+{% else %}
 
 <section class="card-container">
   {% for player in players %}
@@ -25,5 +29,11 @@
     </div>
   {% endfor %}
 </section>
+
+
+
+{% endif %}
+<a href="/addPlayer" class="pure-button" >Add Player</a>
+
 
 {% endblock %}

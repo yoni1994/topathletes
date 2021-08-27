@@ -18,7 +18,7 @@ class Team(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=50)
-    sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+    # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
     position = models.CharField(max_length=25)
     height = models.CharField(max_length=10)
     team = models.CharField(max_length=50)

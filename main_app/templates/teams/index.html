@@ -11,6 +11,11 @@
   <h1>Team List</h1>
 </section>
 
+{% if teams|length == 0 %}
+    <h2>No teams yet!</h2>
+
+{% else %}
+
 
 <section class="card-container">
   {% for team in teams %}
@@ -23,5 +28,8 @@
     </div>
   {% endfor %}
 </section>
+
+{% endif %}
+
 
 {% endblock %}
