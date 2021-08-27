@@ -36,7 +36,15 @@ class TeamCreate(CreateView):
   fields = '__all__'
   success_url = '/teams'
 
+def teams_detail(request, team_id):
+  team = Team.objects.get(id=team_id)
+  return render(request, 'teams/detail.html', { 'team': team })
+
 class PlayerCreate(CreateView):
     model = Player
     fields = '__all__'
     success_url = '/players'
+
+def players_detail(request, player_id):
+  player = Player.objects.get(id=player_id)
+  return render(request, 'players/detail.html', { 'player': player })
