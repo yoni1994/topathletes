@@ -12,17 +12,19 @@
       integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
     <title>Top Athletes</title>
 </head>
 <body>
     <h1>Add a Player</h1>
     <hr>
 
-    <form action="" method="post" class="pure-form">
+    <form action="" method="post" class="form-container">
     {% csrf_token %}
-      {{ form.as_p }}
-    <button type="submit" class="btn submit pure-button">Add this player!</button>
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn submit">Add this player!</button>
     </form>
 
 </body>
