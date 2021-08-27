@@ -7,13 +7,12 @@
 
 {% block content %}
 
-<section class="team-container">
-  <div class="team-details">
-    <h1>The {{ team.name }} are a {{ team.sport }} team that plays in {{team.city}} </h1>
 
-    <h1>Their primary colors are <span style='color: {{team.primaryColor}}; background-color: {{team.secondaryColor}}'>{{team.primaryColor}}</span> and <span style='color: {{team.secondaryColor}}; background-color: {{team.primaryColor}}'>{{team.secondaryColor}}</span></h1>
-    
-  </div>
-</section>
+
+<h1>The {{ team.name }} are a {{ team.sport }} team that plays in {{team.city}} </h1>
+
+<h1>Their primary colors are <span style='color: {{team.primaryColor}}; background-color: {{team.secondaryColor}}'>{{team.primaryColor}}</span> and <span style='color: {{team.secondaryColor}}; background-color: {{team.primaryColor}}'>{{team.secondaryColor}}</span></h1>
+
+
 
 {% endblock %}
