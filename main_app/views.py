@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Team, Player
 
 
@@ -58,3 +59,7 @@ def teams_index(request):
 def players_index(request):
     players = Player.objects.all()
     return render(request, 'players/index.html', { 'players': players })
+
+class TeamCreate(CreateView):
+  model = Team
+  fields = '__all__'

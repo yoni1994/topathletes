@@ -2,13 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Team(models.Model):
-    def __init__(self, city, name, sport, primaryColor, secondaryColor):
-        city = models.CharField(max_length=25)
-        name = models.CharField(max_length=20)
-        sport = models.CharField(max_length=20)
-        # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
-        primaryColor = models.CharField(max_length=20)
-        secondaryColor = models.CharField(max_length=20)
+    city = models.CharField(max_length=25)
+    name = models.CharField(max_length=20)
+    sport = models.CharField(max_length=20)
+    # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+    primaryColor = models.CharField(max_length=20)
+    secondaryColor = models.CharField(max_length=20)
     
 # teams = [
 #     Team('Chicago', 'Cubs', 'baseball', 'blue', 'red'),
@@ -18,12 +17,11 @@ class Team(models.Model):
 # ]
 
 class Player(models.Model):
-    def __init__(self, name, sport, position, height, team):
-        name = models.CharField(max_length=50)
-        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
-        position = models.CharField(max_length=25)
-        height = models.CharField(max_length=10)
-        team = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+    position = models.CharField(max_length=25)
+    height = models.CharField(max_length=10)
+    team = models.CharField(max_length=50)
     
 # players = [
 #     Player('Ernie Banks', 'baseball', 'shortstop', '6\'1', 'Chicago Cubs'),
@@ -33,19 +31,17 @@ class Player(models.Model):
 # ]
 
 class Sport(models.Model):
-    def __init__(self, name, teams, positions):
-        name = models.CharField(max_length=10)
-        teams = [models.ForeignKey('Team', on_delete=models.CASCADE)]
-        positions = [models.ForeignKey('Position', on_delete=models.CASCADE)]
+    name = models.CharField(max_length=10)
+    teams = [models.ForeignKey('Team', on_delete=models.CASCADE)]
+    positions = [models.ForeignKey('Position', on_delete=models.CASCADE)]
 
 
 class Position(models.Model):
-    def __init__(self, name, sport):
-        name = models.CharField(max_length=20)
-        sport = models.CharField(max_length=10)
-        # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    sport = models.CharField(max_length=10)
+    # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
 
-        # def __str__(self):
-        #     return self.name
-        #     return self.sport
+    # def __str__(self):
+    #     return self.name
+    #     return self.sport
         
