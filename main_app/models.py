@@ -9,12 +9,6 @@ class Team(models.Model):
     primaryColor = models.CharField(max_length=20)
     secondaryColor = models.CharField(max_length=20)
     
-# teams = [
-#     Team('Chicago', 'Cubs', 'baseball', 'blue', 'red'),
-#     Team('Chicago', 'Bulls', 'basketball', 'red', 'black'),
-#     Team('Chicago', 'Bears', 'football', 'navy', 'orange'),
-#     Team('Chicago', 'Blackhawks', 'hockey', 'red', 'black'),
-# ]
 
 class Player(models.Model):
     name = models.CharField(max_length=50)
@@ -23,12 +17,6 @@ class Player(models.Model):
     height = models.CharField(max_length=10)
     team = models.CharField(max_length=50)
     
-# players = [
-#     Player('Ernie Banks', 'baseball', 'shortstop', '6\'1', 'Chicago Cubs'),
-#     Player('Derrick Rose', 'basketball', 'point guard', '6\'3', 'Chicago Bulls'),
-#     Player('Devin Hester', 'football', 'wide receiver', '5\'11', 'Chicago Bears'),
-#     Player('Jonathan Toews', 'hockey', 'center', '6\'2', 'Chicago Blackhawks'),
-# ]
 
 class Sport(models.Model):
     name = models.CharField(max_length=10)
@@ -41,7 +29,4 @@ class Position(models.Model):
     sport = models.CharField(max_length=10)
     # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.name
-    #     return self.sport
         

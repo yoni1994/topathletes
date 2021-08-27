@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Position, Team
+from .models import Player, Team
 
 # Register your models here.
 
 admin.site.register(Team)
-admin.site.register(Position)
+admin.site.register(Player)
