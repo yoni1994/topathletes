@@ -5,7 +5,8 @@ class Team(models.Model):
     def __init__(self, city, name, sport, primaryColor, secondaryColor):
         city = models.CharField(max_length=25)
         name = models.CharField(max_length=20)
-        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+        sport = models.CharField(max_length=20)
+        # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
         primaryColor = models.CharField(max_length=20)
         secondaryColor = models.CharField(max_length=20)
     
@@ -40,5 +41,11 @@ class Sport(models.Model):
 
 class Position(models.Model):
     def __init__(self, name, sport):
-        name = models.CharField(max_length=10)
-        sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+        name = models.CharField(max_length=20)
+        sport = models.CharField(max_length=10)
+        # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+
+        # def __str__(self):
+        #     return self.name
+        #     return self.sport
+        
