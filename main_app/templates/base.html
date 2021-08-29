@@ -21,13 +21,17 @@
   <header>
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/players">Players</a></li>
-        <li><a href="/baseball">Baseball</a></li>
-        <li><a href="/basketball">Basketball</a></li>
-        <li><a href="/football">Football</a></li>
-        <li><a href="/hockey">Hockey</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'teams_index' %}">Teams</a></li>
+        <li><a href="{% url 'players_index' %}">Players</a></li>
+        <li><a href="{% url 'baseball' %}">Baseball</a></li>
+        <li><a href="{% url 'basketball' %}">Basketball</a></li>
+        <li><a href="{% url 'football' %}">Football</a></li>
+        <li><a href="{% url 'hockey' %}">Hockey</a></li>
+        <li><a href="{% url 'logout' %}">Log out</a></li>
+        {% else %}
+        <li><a href="{% url 'home' %}">Login</a></li>
+        {% endif %}
       </ul>
     </nav>
   </header>
