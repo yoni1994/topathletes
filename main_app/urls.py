@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.Home.as_view(), name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('teams/', views.teams_index, name='teams_index'),
     path('addTeam/', views.TeamCreate.as_view(), name='team_create'),

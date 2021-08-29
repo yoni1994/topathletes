@@ -9,8 +9,8 @@ from django.contrib.auth.views import LoginView
 
 
 
-def home(request):
-    return render(request, 'home.html')
+class Home(LoginView):
+  template_name = 'home.html'
 
 def baseball(request):
     return render(request, 'baseball.html')
