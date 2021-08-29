@@ -41,11 +41,11 @@ def hockey(request):
     return render(request, 'hockey.html')
 
 def teams_index(request):
-    teams = Team.objects.all()
+    teams = Team.objects.filter(user=request.user)
     return render(request, 'teams/index.html', { 'teams': teams })
 
 def players_index(request):
-    players = Player.objects.all()
+    players = Player.objects.filter(user=request.user)
     return render(request, 'players/index.html', { 'players': players })
 
 class TeamCreate(CreateView):
