@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Team(models.Model):
@@ -8,6 +9,7 @@ class Team(models.Model):
     # sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
     primaryColor = models.CharField(max_length=20)
     secondaryColor = models.CharField(max_length=20)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
 class Player(models.Model):
@@ -16,6 +18,7 @@ class Player(models.Model):
     position = models.CharField(max_length=25)
     height = models.CharField(max_length=10)
     team = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
 class Sport(models.Model):
