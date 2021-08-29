@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -55,7 +56,7 @@ def players_index(request):
     players = Player.objects.filter(user=request.user)
     return render(request, 'players/index.html', { 'players': players })
 
-class TeamCreate(CreateView):
+class TeamCreate(LoginRequiredMixin, CreateView):
   model = Team
   fields = ['city', 'name', 'sport', 'primaryColor', 'secondaryColor']
   def form_valid(self, form):
@@ -63,12 +64,12 @@ class TeamCreate(CreateView):
     return super().form_valid(form)
   success_url = '/teams'
 
-class TeamUpdate(UpdateView):
+class TeamUpdate(LoginRequiredMixin, UpdateView):
     model = Team
     fields = '__all__'
     success_url = '/teams'
 
-class TeamDelete(DeleteView):
+class TeamDelete(LoginRequiredMixin, DeleteView):
     model = Team
     success_url = '/teams'
 
@@ -77,7 +78,7 @@ def teams_detail(request, team_id):
   return render(request, 'teams/detail.html', { 'team': team })
 
 
-class PlayerCreate(CreateView):
+class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
     fields = ['name', 'position', 'height', 'team']
     def form_valid(self, form):
@@ -85,12 +86,12 @@ class PlayerCreate(CreateView):
         return super().form_valid(form)
     success_url = '/players'
 
-class PlayerUpdate(UpdateView):
+class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
     fields = '__all__'
     success_url = '/players'
 
-class PlayerDelete(DeleteView):
+class PlayerDelete(LoginRequiredMixin, DeleteView):
     model = Player
     success_url = '/players'
 
