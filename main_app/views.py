@@ -34,7 +34,10 @@ def players_index(request):
 
 class TeamCreate(CreateView):
   model = Team
-  fields = '__all__'
+  fields = ['city', 'name', 'sport', 'primaryColor', 'secondaryColor']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
   success_url = '/teams'
 
 class TeamUpdate(UpdateView):
@@ -53,7 +56,10 @@ def teams_detail(request, team_id):
 
 class PlayerCreate(CreateView):
     model = Player
-    fields = '__all__'
+    fields = ['name', 'position', 'height', 'team']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
     success_url = '/players'
 
 class PlayerUpdate(UpdateView):
