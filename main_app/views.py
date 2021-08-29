@@ -4,6 +4,7 @@ from .models import Team, Player
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -28,22 +29,28 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
 
+@login_required
 def baseball(request):
     return render(request, 'baseball.html')
 
+@login_required
 def basketball(request):
     return render(request, 'basketball.html')
 
+@login_required
 def football(request):
     return render(request, 'football.html')
 
+@login_required
 def hockey(request):
     return render(request, 'hockey.html')
 
+@login_required
 def teams_index(request):
     teams = Team.objects.filter(user=request.user)
     return render(request, 'teams/index.html', { 'teams': teams })
 
+@login_required
 def players_index(request):
     players = Player.objects.filter(user=request.user)
     return render(request, 'players/index.html', { 'players': players })
