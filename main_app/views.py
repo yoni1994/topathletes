@@ -74,7 +74,7 @@ class TeamCreate(LoginRequiredMixin, CreateView):
 
 class TeamUpdate(LoginRequiredMixin, UpdateView):
     model = Team
-    fields = '__all__'
+    fields = ['city', 'name', 'sport', 'primaryColor', 'secondaryColor']
     success_url = '/teams'
 
 class TeamDelete(LoginRequiredMixin, DeleteView):
@@ -104,7 +104,7 @@ class PlayerCreate(LoginRequiredMixin, CreateView):
 
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
-    fields = '__all__'
+    fields = ['name', 'sport', 'position', 'height', 'team']
     success_url = '/players'
 
 class PlayerDelete(LoginRequiredMixin, DeleteView):
