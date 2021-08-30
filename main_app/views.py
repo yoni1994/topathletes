@@ -94,13 +94,6 @@ class PlayerCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
     success_url = '/players'
 
-# class BaseballPlayerCreate(LoginRequiredMixin, CreateView):
-#     model = baseballPlayer
-#     fields = ['name', 'position', 'height', 'team']
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         return super().form_valid(form)
-#     success_url = '/players'
 
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
@@ -114,7 +107,3 @@ class PlayerDelete(LoginRequiredMixin, DeleteView):
 def players_detail(request, player_id):
   player = Player.objects.get(id=player_id)
   return render(request, 'players/detail.html', { 'player': player })
-
-# def baseball_players_detail(request, baseballPlayer_id):
-#   player = baseballPlayer.objects.get(id=baseballPlayer_id)
-#   return render(request, 'players/detail.html', { 'player': player })
