@@ -17,12 +17,7 @@ Check out the planning steps here:
 
 ## Screenshots
 
-![login](./readmepics/login.png)
-![teams](./readmepics/teams.png)
-![baseball](./readmepics/baseball.png)
-![team](./readmepics/team.png)
-![edit](./readmepics/edit.png)
-![delete](./readmepics/delete.png)
+
 
 
 ## Technologies Used
