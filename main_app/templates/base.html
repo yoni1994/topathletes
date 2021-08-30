@@ -22,8 +22,8 @@
     <nav>
       <ul>
         {% if user.is_authenticated %}
-        <li><a href="{% url 'teams_index' %}">Teams</a></li>
-        <li><a href="{% url 'players_index' %}">Players</a></li>
+        <li><a href="{% url 'teams_index' %}">All Teams</a></li>
+        <li><a href="{% url 'players_index' %}">All Players</a></li>
         <li><a href="{% url 'baseball' %}">Baseball</a></li>
         <li><a href="{% url 'basketball' %}">Basketball</a></li>
         <li><a href="{% url 'football' %}">Football</a></li>

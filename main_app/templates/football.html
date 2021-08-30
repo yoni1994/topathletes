@@ -1,11 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/player.css' %}"/>
+{% endblock %}
 
 {% block content %}
 
-<h1>Football</h1>
-<hr />
-<p>
-  30! 20! 10! 5! Touchdown!!!
-</p>
+<section class="page-header">
+  <h1>Favorite Baseball Teams</h1>
+</section>
+<hr>
+
+{% if teams|length == 0 %}
+    <h1>No football teams yet!</h1>
+
+{% else %}
+
+
+<section class="card-container">
+  {% for team in teams %}
+    <div class="card" style='border: 2px solid {{team.secondaryColor}}; background-color: {{team.primaryColor}}; color: {{team.secondaryyColor}}'>
+      <a href="{% url 'teams_detail' team.id %}">
+        <div class="card-content">
+          <h2 class="card-title">{{ team.city }} {{ team.name }}</h2>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endif %}
+<a href="/addTeam" class="btn submit" >Add Team</a>
+
 
 {% endblock %}
