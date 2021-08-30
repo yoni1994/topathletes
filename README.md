@@ -19,15 +19,23 @@ Check out the planning steps here:
 
 ![login](./readmepics/login.png)
 
-break
+
 
 ![teams](./readmepics/teams.png)
 
+
+
 ![baseball](./readmepics/baseball.png)
+
+
 
 ![team](./readmepics/team.png)
 
+
+
 ![edit](./readmepics/edit.png)
+
+
 
 ![delete](./readmepics/delete.png)
 
