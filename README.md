@@ -17,26 +17,27 @@ Check out the planning steps here:
 
 ## Screenshots
 
+Login page:
 ![login](./readmepics/login.png)
 
 
-
+List of all your teams:
 ![teams](./readmepics/teams.png)
 
 
-
+List of all baseball teaams and players:
 ![baseball](./readmepics/baseball.png)
 
 
-
+index for a single team:
 ![team](./readmepics/team.png)
 
 
-
+team edit page
 ![edit](./readmepics/edit.png)
 
 
-
+team delete page
 ![delete](./readmepics/delete.png)
 
 
