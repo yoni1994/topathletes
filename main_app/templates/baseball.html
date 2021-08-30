@@ -14,7 +14,7 @@
 <hr>
 
 {% if teams|length == 0 %}
-    <h1 class='position'>No baseball teams yet!</h1>
+    <h1>No baseball teams yet!</h1>
 
 {% else %}
 
@@ -40,162 +40,13 @@
 </section>
 <hr>
 
+
 {% if players|length == 0 %}
     <h2>No players yet!</h2>
 
 {% else %}
 
-
 <section class="card-container">
-  {% for player in players %}
-    {% if player.position == '1b' %}
-      <h1 class='position'>First base:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == '2b' %}
-      <h1 class='position'>Second base:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-{% if players.filter() %}
-<h1 class='position'>Third base:</h1>
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == '3b' %}
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 's' %}
-      <h1 class='position'>Shortstop:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 'catcher' %}
-      <h1 class='position'>Catcher:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 'of' %}
-      <h1 class='position'>Outfield:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 'dh' %}
-      <h1 class='position'>Designated Hitter:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 'sp' %}
-      <h1 class='position'>Starter:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-<section class="card-container">
-  {% for player in players %}
-    {% if player.position == 'rp' %}
-      <h1 class='position'>Reliever:</h1>
-      <div class="card">
-        <a href="{% url 'players_detail' player.id %}">
-          <div class="card-content">
-            <h2 class="card-title">{{ player.name }}</h2>
-          </div>
-        </a>
-      </div>
-    {% endif %}
-    <hr>
-  {% endfor %}
-</section>
-
-
-
-
-
-
-{% comment %} <section class="card-container">
   {% for player in players %}
     <div class="card">
       <a href="{% url 'players_detail' player.id %}">
@@ -205,7 +56,7 @@
       </a>
     </div>
   {% endfor %}
-</section> {% endcomment %}
+</section>
 
 
 
