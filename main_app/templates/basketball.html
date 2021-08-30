@@ -8,7 +8,7 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>Favorite Baseball Teams</h1>
+  <h1>Favorite Basketball Teams</h1>
 </section>
 <hr>
 
@@ -20,8 +20,8 @@
 
 <section class="card-container">
   {% for team in teams %}
-    <div class="card" style='border: 2px solid {{team.secondaryColor}}; background-color: {{team.primaryColor}}; color: {{team.secondaryyColor}}'>
-      <a href="{% url 'teams_detail' team.id %}">
+    <div class="card" style='border: 2px solid {{team.secondaryColor}}; background-color: {{team.primaryColor}}'>
+      <a href="{% url 'teams_detail' team.id %}" style='color: {{team.secondaryColor}}'>
         <div class="card-content">
           <h2 class="card-title">{{ team.city }} {{ team.name }}</h2>
         </div>
@@ -32,6 +32,33 @@
 
 {% endif %}
 
+<hr>
+
+<section class="page-header">
+  <h1>Favorite Basketball Players</h1>
+</section>
+<hr>
+
+{% if players|length == 0 %}
+    <h2>No basketball players yet!</h2>
+
+{% else %}
+
+<section class="card-container">
+  {% for player in players %}
+    <div class="card">
+      <a href="{% url 'players_detail' player.id %}">
+        <div class="card-content">
+          <h2 class="card-title">{{ player.name }}</h2>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+
+
+{% endif %}
 
 
 {% endblock %}

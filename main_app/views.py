@@ -39,17 +39,20 @@ def baseball(request):
 @login_required
 def basketball(request):
     teams = Team.objects.filter(user=request.user, sport='basketball')
-    return render(request, 'basketball.html', { 'teams': teams })
+    players = Player.objects.filter(user=request.user, sport='basketball')
+    return render(request, 'basketball.html', { 'teams': teams, 'players': players})
 
 @login_required
 def football(request):
     teams = Team.objects.filter(user=request.user, sport='football')
-    return render(request, 'football.html', { 'teams': teams })
+    players = Player.objects.filter(user=request.user, sport='football')
+    return render(request, 'football.html', { 'teams': teams, 'players': players})
 
 @login_required
 def hockey(request):
     teams = Team.objects.filter(user=request.user, sport='hockey')
-    return render(request, 'hockey.html', { 'teams': teams })
+    players = Player.objects.filter(user=request.user, sport='hockey')
+    return render(request, 'hockey.html', { 'teams': teams, 'players': players})
 
 @login_required
 def teams_index(request):
