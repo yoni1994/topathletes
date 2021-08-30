@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'topathletes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'topathletes',
+        'ENGINE': env('PRODUCTION_DB_ENGINE') or 'django.db.backends.sqlite3',
+        'NAME': env('PRODUCTION_DB') or BASE_DIR/'db.sqlite3',
     }
 }
 
