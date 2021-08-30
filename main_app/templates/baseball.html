@@ -34,21 +34,20 @@
 
 <hr>
 
-{% comment %} <section class="page-header"> {% endcomment %}
-  {% comment %} <h1>Favorite Baseball Players</h1>
+<section class="page-header">
+  <h1>Favorite Baseball Players</h1>
 </section>
 <hr>
 
-{% if teams|length == 0 %}
-    <h1>No baseball teams yet!</h1>
+{% if players|length == 0 %}
+    <h2>No players yet!</h2>
 
-{% else %} {% endcomment %}
+{% else %}
 
-
-{% comment %} <section class="card-container">
+<section class="card-container">
   {% for player in players %}
     <div class="card">
-      <a href="{% url 'baseball_players_detail' baseballPlayer.id %}">
+      <a href="{% url 'players_detail' player.id %}">
         <div class="card-content">
           <h2 class="card-title">{{ player.name }}</h2>
         </div>
@@ -57,8 +56,9 @@
   {% endfor %}
 </section>
 
+
+
 {% endif %}
 
-{% endcomment %}
 
-{% endblock %} 
+{% endblock %}
