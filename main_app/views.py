@@ -31,9 +31,10 @@ def signup(request):
     return render(request, 'signup.html', context)
 
 @login_required
-def baseball(request):
+def baseball(request, player_id):
     teams = Team.objects.filter(user=request.user, sport='baseball')
-    return render(request, 'baseball.html', { 'teams': teams })
+    player = baseballPlayer.objects.get(id=player_id)
+    return render(request, 'baseball.html', { 'teams': teams, 'player': player })
 
 @login_required
 def basketball(request):
