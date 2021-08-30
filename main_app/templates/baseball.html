@@ -32,6 +32,33 @@
 
 {% endif %}
 
+<hr>
+
+{% comment %} <section class="page-header"> {% endcomment %}
+  {% comment %} <h1>Favorite Baseball Players</h1>
+</section>
+<hr>
+
+{% if teams|length == 0 %}
+    <h1>No baseball teams yet!</h1>
+
+{% else %} {% endcomment %}
 
 
-{% endblock %}
+{% comment %} <section class="card-container">
+  {% for player in players %}
+    <div class="card">
+      <a href="{% url 'baseball_players_detail' baseballPlayer.id %}">
+        <div class="card-content">
+          <h2 class="card-title">{{ player.name }}</h2>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endif %}
+
+{% endcomment %}
+
+{% endblock %} 

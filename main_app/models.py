@@ -10,18 +10,36 @@ SPORT_CHOICES = (
     ('hockey', 'Hockey'),
 )
 
-BASEBALL_CHOICES = (
+POSITION_CHOICES = (
     ('sp', 'Starter'),
     ('rp', 'Reliever'),
     ('1b', 'First Baseman'),
     ('2b', 'Second Baseman'),
     ('3b', 'Third Baseman'),
     ('ss', 'Shortstop'),
-    ('c', 'Catcher'),
-    ('rf', 'Right Fielder'),
-    ('cf', 'Center Fielder'),
-    ('lf', 'Left Fielder'),
+    ('catcher', 'Catcher'),
+    ('of', 'Outfielder'),
     ('dh', 'Designated Hitter'),
+    ('pg', 'Point Guard'),
+    ('sg', 'Shooting Guard'),
+    ('sf', 'Small Forward'),
+    ('pf', 'Power Forward'),
+    ('center', 'Center'),
+    ('rw', 'Right Winger'),
+    ('lw', 'Left Winger'),
+    ('d', 'Defender'),
+    ('g', 'Goalie'),
+    ('qb', 'Quarterback'),
+    ('rb', 'Running Back'),
+    ('wr', 'Wide Receiver'),
+    ('te', 'Tight End'),
+    ('ol', 'Offensive Lineman'),
+    ('dl', 'Defensive Lineman'),
+    ('lb', 'Linebacker'),
+    ('cb', 'Cornerback'),
+    ('s', 'Safety'),
+    ('k', 'Kicker'),
+    ('p', 'Punter'),
 )
 
 
@@ -38,49 +56,39 @@ class Team(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=50)
-    # sport = models.CharField(max_length=20, choices=SPORT_CHOICES, default='baseball')
-    position = models.CharField(
-        max_length=25,
-        # if sport == 'baseball':
-        #     choices=BASEBALL_CHOICES
-        # elif sport == 'basketball':
-        #     choices=BASKETBALL_CHOICES
-        # elif sport == 'basketball':
-        #     choices=BASKETBALL_CHOICES
-        # else:
-        #     choices=BASKETBALL_CHOICES
-        )
+    sport = models.CharField(max_length=20, choices=SPORT_CHOICES, default='baseball')
+    position = models.CharField(max_length=25, choices=POSITION_CHOICES, default='sp')
     height = models.CharField(max_length=10)
     team = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class baseballPlayer(models.Model):
-    name = models.CharField(max_length=50)
-    position = models.CharField(max_length=25, choices=BASEBALL_CHOICES, default='sp')
-    height = models.CharField(max_length=10)
-    team = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class baseballPlayer(models.Model):
+#     name = models.CharField(max_length=50)
+#     position = models.CharField(max_length=25, choices=BASEBALL_CHOICES, default='sp')
+#     height = models.CharField(max_length=10)
+#     team = models.CharField(max_length=50)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class basketballPlayer(models.Model):
-    name = models.CharField(max_length=50)
-    position = models.CharField(max_length=25)
-    height = models.CharField(max_length=10)
-    team = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class basketballPlayer(models.Model):
+#     name = models.CharField(max_length=50)
+#     position = models.CharField(max_length=25)
+#     height = models.CharField(max_length=10)
+#     team = models.CharField(max_length=50)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class footballPlayer(models.Model):
-    name = models.CharField(max_length=50)
-    position = models.CharField(max_length=25)
-    height = models.CharField(max_length=10)
-    team = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class footballPlayer(models.Model):
+#     name = models.CharField(max_length=50)
+#     position = models.CharField(max_length=25)
+#     height = models.CharField(max_length=10)
+#     team = models.CharField(max_length=50)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class hockeyPlayer(models.Model):
-    name = models.CharField(max_length=50)
-    position = models.CharField(max_length=25)
-    height = models.CharField(max_length=10)
-    team = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class hockeyPlayer(models.Model):
+#     name = models.CharField(max_length=50)
+#     position = models.CharField(max_length=25)
+#     height = models.CharField(max_length=10)
+#     team = models.CharField(max_length=50)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     
 

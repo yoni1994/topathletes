@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Team, Player, baseballPlayer
+from .models import Team, Player
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
@@ -31,10 +31,9 @@ def signup(request):
     return render(request, 'signup.html', context)
 
 @login_required
-def baseball(request, player_id):
+def baseball(request):
     teams = Team.objects.filter(user=request.user, sport='baseball')
-    player = baseballPlayer.objects.get(id=player_id)
-    return render(request, 'baseball.html', { 'teams': teams, 'player': player })
+    return render(request, 'baseball.html', { 'teams': teams})
 
 @login_required
 def basketball(request):
@@ -85,19 +84,19 @@ def teams_detail(request, team_id):
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
-    fields = ['name', 'position', 'height', 'team']
+    fields = ['name', 'sport', 'position', 'height', 'team']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
     success_url = '/players'
 
-class BaseballPlayerCreate(LoginRequiredMixin, CreateView):
-    model = baseballPlayer
-    fields = ['name', 'position', 'height', 'team']
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-    success_url = '/players'
+# class BaseballPlayerCreate(LoginRequiredMixin, CreateView):
+#     model = baseballPlayer
+#     fields = ['name', 'position', 'height', 'team']
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         return super().form_valid(form)
+#     success_url = '/players'
 
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
@@ -111,3 +110,7 @@ class PlayerDelete(LoginRequiredMixin, DeleteView):
 def players_detail(request, player_id):
   player = Player.objects.get(id=player_id)
   return render(request, 'players/detail.html', { 'player': player })
+
+# def baseball_players_detail(request, baseballPlayer_id):
+#   player = baseballPlayer.objects.get(id=baseballPlayer_id)
+#   return render(request, 'players/detail.html', { 'player': player })
