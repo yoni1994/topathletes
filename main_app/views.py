@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Team, Player
+from .models import Team, Player, baseballPlayer
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
@@ -84,6 +84,14 @@ def teams_detail(request, team_id):
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
+    fields = ['name', 'position', 'height', 'team']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    success_url = '/players'
+
+class BaseballPlayerCreate(LoginRequiredMixin, CreateView):
+    model = baseballPlayer
     fields = ['name', 'position', 'height', 'team']
     def form_valid(self, form):
         form.instance.user = self.request.user
