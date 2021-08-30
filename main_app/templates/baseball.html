@@ -20,8 +20,8 @@
 
 <section class="card-container">
   {% for team in teams %}
-    <div class="card" style='border: 2px solid {{team.secondaryColor}}; background-color: {{team.primaryColor}}; color: {{team.secondaryyColor}}'>
-      <a href="{% url 'teams_detail' team.id %}">
+    <div class="card" style='border: 2px solid {{team.secondaryColor}}; background-color: {{team.primaryColor}}'>
+      <a href="{% url 'teams_detail' team.id %}" style='color: {{team.secondaryyColor}}'>
         <div class="card-content">
           <h2 class="card-title">{{ team.city }} {{ team.name }}</h2>
         </div>
