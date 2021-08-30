@@ -1,4 +1,8 @@
 body {
-    background-image: url(../images/Screen\ Shot\ 2021-08-30\ at\ 12.44.22\ PM.png);
+    background-image: url(../images/baseball.png);
     background-size: cover;
+}
+
+.position {
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
