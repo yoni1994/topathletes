@@ -46,8 +46,8 @@ POSITION_CHOICES = (
 
 
 class Team(models.Model):
-    city = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
+    city = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
     sport = models.CharField(max_length=20, choices=SPORT_CHOICES, default='baseball')
     primaryColor = models.CharField(max_length=20)
     secondaryColor = models.CharField(max_length=20)
