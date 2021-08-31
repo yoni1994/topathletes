@@ -49,6 +49,8 @@ Check out the planning steps here:
 ## Technologies Used
 
 - Python
+- Django
+- Psycopg2
 - HTML
 - CSS
 
